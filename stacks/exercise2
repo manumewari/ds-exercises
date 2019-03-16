@@ -1,0 +1,125 @@
+
+/* https://github.com/kuychaco/algoClass/blob/master/data-structures/stack.js */
+
+/*** Additional Exercises:
+Modify your stack to take a max capacity and return a string if you try to add an element when there's no more room:
+myStack.push(value)
+=> "Max capacity already reached. Remove element before adding a new one."
+Create a contains method to check if a value is in the stack:
+myStack.contains('findme')
+=> true/false
+What's the time complexity?
+Create an until method to get the number of pops until you get to a certain value:
+stack values - (first)2-5-7-3-6-9(last)
+myStack.until(7)
+=> 4
+What's the time complexity?
+ */
+
+function Stack(){
+    this.stackObj = {};
+    this.index = 0;
+    this.maxSize = 10;
+}
+
+Stack.prototype.push = function(num) {
+
+    if (this.index === this.maxSize)
+    {
+        console.log("Max capacity already reached. Remove element before adding a new one.");
+    }
+    else
+    {
+        this.stackObj[ this.index++ ] = num;
+        console.log("current size of stack is "+ this.index);
+    }
+}
+
+Stack.prototype.pop = function() {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        console.log("this.index ==> "+this.index);
+        console.log("popping element "+ this.stackObj[this.index-1]);
+        delete this.stackObj[ this.index-- ];
+    }
+}
+
+
+Stack.prototype.peek = function() {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        console.log("this.index ==> "+this.index);
+        console.log("last element is "+ this.stackObj[this.index-1]);
+    }
+}
+
+Stack.prototype.count = function() {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        console.log("this.index ==> "+this.index);
+        console.log("total elements in stack ==> "+ this.index);
+    }
+}
+
+Stack.prototype.contains = function(num) {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        for(var i=0; i < this.index; i++)
+        {
+            if(this.stackObj[i] === num)
+            {
+                console.log("starting from 0, number found at position "+i);
+                break;
+            }
+        }
+        console.log("this.index ==> "+this.index);
+        console.log("total elements in stack ==> "+ this.index);
+    }
+}
+
+Stack.prototype.until = function(num) {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        var popCount = 0;
+        var currentNum = '';
+        for( var i = this.index-1 ; i>=0 ; i-- )
+        {
+            currentNum = this.stackObj[ i ];
+            delete this.stackObj[ i ];
+            --this.index ;
+            popCount++;
+            if(currentNum === num)
+            {
+                console.log("number found !!");
+                break;
+            }
+        }
+        console.log("total pops occurred ==> "+ popCount);
+        console.log("total elements in stack ==> "+ this.index);
+    }
+}
+
+
+var myStack = new Stack();
+
+

@@ -1,0 +1,69 @@
+/* https://github.com/kuychaco/algoClass/blob/master/data-structures/stack.js */
+
+/* *** Operations:
+   myStack.push(value)
+   => count of stack
+   add value to collection
+   myStack.pop()
+   => most recent element added collection
+   Remove item so that it is no longer in collection
+   myStack.peek()
+   => most recent element added collection
+   Similiar to pop, but do not remove element from collection
+   myStack.count()
+   => number of elements in stack */
+
+
+
+function Stack(){
+    this.stackObj = {};
+    this.index = 0;
+}
+
+Stack.prototype.push = function(num) {
+    console.log("current size of stack is "+ this.index);
+    this.stackObj[ this.index++ ] = num;
+}
+
+Stack.prototype.pop = function() {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        console.log("this.index ==> "+this.index);
+        console.log("popping element "+ this.stackObj[this.index-1]);
+        this.stackObj[ this.index-- ] = '';
+    }
+}
+
+
+Stack.prototype.peek = function() {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        console.log("this.index ==> "+this.index);
+        console.log("last element is "+ this.stackObj[this.index-1]);
+    }
+}
+
+Stack.prototype.count = function() {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        console.log("this.index ==> "+this.index);
+        console.log("total elements in stack ==> "+ this.index);
+    }
+}
+
+
+var myStack = new Stack();
+
+
