@@ -1,0 +1,55 @@
+
+/* https://github.com/kuychaco/algoClass/blob/master/data-structures/stack.js */
+
+/*** Sort a stack so that its elements are in ascending order. */
+
+
+/* NOT COMPLETE */
+
+function Stack(){
+    this.stackObj = {};
+    this.index = 0;
+    this.maxSize = 10;
+}
+
+Stack.prototype.push = function(num) {
+
+    if (this.index === this.maxSize)
+    {
+        console.log("Max capacity already reached. Remove element before adding a new one.");
+    }
+    else
+    {
+        this.stackObj[ this.index++ ] = num;
+        console.log("current size of stack is "+ this.index);
+    }
+}
+
+Stack.prototype.pop = function() {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        console.log("this.index ==> "+this.index);
+        console.log("popping element "+ this.stackObj[this.index-1]);
+        delete this.stackObj[ this.index-- ];
+    }
+}
+
+Stack.prototype.min = function() {
+    if( this.index === 0 )
+    {
+        console.log("there are no elements in the stack");
+    }
+    else
+    {
+        console.log("this.index ==> "+this.index);
+        console.log("smallest element is "+ this.minObj[this.index-1]);
+    }
+}
+
+var myStack = new Stack();
+
+
