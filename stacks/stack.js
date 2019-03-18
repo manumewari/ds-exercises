@@ -1,8 +1,8 @@
 
-function Stack(){
+function Stack(stackMaxSize){
     this.stackObj = {};
     this.index = 0;
-    this.maxSize = 10;
+    this.maxSize = stackMaxSize; //Default
 }
 
 Stack.prototype.push = function(num) {
@@ -25,7 +25,7 @@ Stack.prototype.pop = function() {
     else
     {
         var valueDeleted = this.stackObj[this.index-1];
-        delete this.stackObj[ this.index-- ];
+        delete this.stackObj[ --this.index ];
 
         return valueDeleted;
     }
@@ -44,14 +44,7 @@ Stack.prototype.peek = function() {
 }
 
 Stack.prototype.count = function() {
-    if( this.index === 0 )
-    {
-        return 0;
-    }
-    else
-    {
-        return this.index;
-    }
+    return this.index;
 }
 
 Stack.prototype.contains = function(num) {
@@ -79,15 +72,12 @@ Stack.prototype.until = function(num) {
     }
     else
     {
-        var popCount = 0;
-        var currentNum = '';
+        var deletedNumber = '';
+
         for( var i = this.index-1 ; i>=0 ; i-- )
         {
-            currentNum = this.stackObj[ i ];
-            delete this.stackObj[ i ];
-            --this.index ;
-            popCount++;
-            if(currentNum === num)
+            deletedNumber = this.pop();
+            if(deletedNumber === num)
             {
                 break;
             }
