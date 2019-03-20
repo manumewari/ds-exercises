@@ -94,10 +94,10 @@ test('count() should stop increasing when max size limit of stack is reached', (
 test('peek() should return same element once stack is reached', () => {
     var testStack = new Stack(5);
 
-[10, 11, 12, 13, 14].forEach(element => testStack.push(element));
+    [10, 11, 12, 13, 14].forEach(element => testStack.push(element));
 
-expect(testStack.peek()).toBe(14);
+    expect(testStack.peek()).toBe(14);
 
-testStack.push(15);
-expect(testStack.peek()).toBe(14);
+    testStack.push(15);
+    expect(testStack.peek()).toBe(14);
 });

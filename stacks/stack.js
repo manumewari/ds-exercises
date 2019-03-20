@@ -48,39 +48,22 @@ Stack.prototype.count = function() {
 }
 
 Stack.prototype.contains = function(num) {
-    if( this.index === 0 )
+    for(var i=0; i < this.index; i++)
     {
-        console.log("there are no elements in the stack");
-    }
-    else
-    {
-        for(var i=0; i < this.index; i++)
+        if(this.stackObj[i] === num)
         {
-            if(this.stackObj[i] === num)
-            {
-                return true;
-            }
+            return true;
         }
     }
     return false;
 }
 
 Stack.prototype.until = function(num) {
-    if( this.index === 0 )
+    for( var i = this.index-1 ; i>=0 ; i-- )
     {
-        console.log("there are no elements in the stack");
-    }
-    else
-    {
-        var deletedNumber = '';
-
-        for( var i = this.index-1 ; i>=0 ; i-- )
+        if(this.pop() === num)
         {
-            deletedNumber = this.pop();
-            if(deletedNumber === num)
-            {
-                break;
-            }
+            break;
         }
     }
 }

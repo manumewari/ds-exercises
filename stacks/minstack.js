@@ -1,53 +1,36 @@
+const Stack = require('./Stack');
 
-function MinStack(){
-    this.stackObj = {};
-    this.index = 0;
-    this.maxSize = 10;
-    this.minObj = {};
+function MinStack(stackMaxSize){
+    this.stack = new Stack(stackMaxSize);
+    this.minStack = new Stack(stackMaxSize);
 }
 
 MinStack.prototype.push = function(num) {
-
-    if (this.index === this.maxSize)
+    var currentMinimum = this.minStack.peek();
+    if(this.minStack.count() === 0 || (!currentMinimum || currentMinimum > num) ) //First element
     {
-        console.log("Max capacity already reached. Remove element before adding a new one.");
+        this.minStack.push(num);
     }
     else
     {
-        if(this.index === 0) //First element
-        {
-            this.minObj[ this.index ] = num;
-        }
-        else
-        {
-            this.minObj[ this.index ] = ( this.minObj[ this.index-1 ] < num )? this.minObj[ this.index-1 ] : num;
-        }
-
-        this.stackObj[ this.index++ ] = num;
+        this.minStack.push(currentMinimum);
     }
+    this.stack.push(num);
 }
 
 MinStack.prototype.pop = function() {
-    if( this.index === 0 )
-    {
-        console.log("there are no elements in the stack");
-    }
-    else
-    {
-        var valueDeleted = this.stackObj[this.index-1];
-        delete this.stackObj[ --this.index ];
-        return valueDeleted;
-    }
+    this.minStack.pop();
+    this.stack.pop();
 }
 
 MinStack.prototype.min = function() {
-    if( this.index === 0 )
+    if( this.minStack.count() === 0 )
     {
         console.log("there are no elements in the stack");
     }
     else
     {
-        return this.minObj[this.index-1];
+        return this.minStack.peek();
     }
 }
 
