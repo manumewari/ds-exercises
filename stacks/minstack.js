@@ -7,7 +7,7 @@ function MinStack(stackMaxSize){
 
 MinStack.prototype.push = function(num) {
     var currentMinimum = this.minStack.peek();
-    if(this.minStack.count() === 0 || (!currentMinimum || currentMinimum > num) ) //First element
+    if(this.minStack.count() === 0 || (typeof currentMinimum === "undefined" || currentMinimum > num) )
     {
         this.minStack.push(num);
     }
@@ -24,14 +24,7 @@ MinStack.prototype.pop = function() {
 }
 
 MinStack.prototype.min = function() {
-    if( this.minStack.count() === 0 )
-    {
-        console.log("there are no elements in the stack");
-    }
-    else
-    {
-        return this.minStack.peek();
-    }
+    return this.minStack.peek();
 }
 
 module.exports = MinStack;

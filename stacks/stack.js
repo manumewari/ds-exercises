@@ -59,13 +59,7 @@ Stack.prototype.contains = function(num) {
 }
 
 Stack.prototype.until = function(num) {
-    for( var i = this.index-1 ; i>=0 ; i-- )
-    {
-        if(this.pop() === num)
-        {
-            break;
-        }
-    }
+    while( typeof this.peek() !== "undefined" && this.pop() !== num);
 }
 
 module.exports = Stack;

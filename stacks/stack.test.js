@@ -74,7 +74,7 @@ test('count() should return 0 if element passed was not present in stack', () =>
 test('count() should return 2 if 3rd element passed was not present in stack', () => {
     var testStack = new Stack(5);
 
-    [10, 11, 12, 13].forEach(element => testStack.push(element));
+    [10, 11, 12, 0, 13].forEach(element => testStack.push(element));
 
     testStack.until(12);
     expect(testStack.count()).toBe(2);
