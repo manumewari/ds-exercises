@@ -12,12 +12,6 @@ test('test if the brackets are not balanced then checkBrackets() should return f
     expect(testStack).toBeFalsy();
 });
 
-test('test if the brackets are not balanced then checkBrackets() should return false', () => {
-    var testString = "sqrt(5*(3+8)) / (4-0) )";
-    var testStack = checkBrackets(testString);
-    expect(testStack).toBeFalsy();
-});
-
 test('test checkBrackets() should return true if there are only numbers and no brackets', () => {
     var testString = "100014234320030";
     var testStack = checkBrackets(testString);

@@ -7,20 +7,22 @@ function MinStack(stackMaxSize){
 
 MinStack.prototype.push = function(num) {
     var currentMinimum = this.minStack.peek();
+    var newCurrentMinimum;
     if(this.minStack.count() === 0 || (typeof currentMinimum === "undefined" || currentMinimum > num) )
     {
-        this.minStack.push(num);
+        newCurrentMinimum = num;
     }
     else
     {
-        this.minStack.push(currentMinimum);
+        newCurrentMinimum = currentMinimum;
     }
+    this.minStack.push(newCurrentMinimum);
     this.stack.push(num);
 }
 
 MinStack.prototype.pop = function() {
     this.minStack.pop();
-    this.stack.pop();
+    return this.stack.pop();
 }
 
 MinStack.prototype.min = function() {
