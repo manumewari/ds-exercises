@@ -7,46 +7,28 @@ function TowerOfHanoi (discCount) {
     this.towerC = new Stack(discCount);
 
     var noOfDiscs = discCount;
-    while (noOfDiscs-- > 0) {
-        this.towerA.push("Disc");
+    while (noOfDiscs > 0) {
+        this.towerA.push("Disc"+(noOfDiscs--));
     }
 }
 
 TowerOfHanoi.prototype.startMovingDiscs = function () {
 
-    this.solvePuzzle (this.discCount, "A", "C", "B");
+    this.solvePuzzle (this.discCount, this.towerA, this.towerC, this.towerB);
 }
 
-TowerOfHanoi.prototype.solvePuzzle = function (discCount, source, destination, buffer) {
+TowerOfHanoi.prototype.solvePuzzle = function (discCount, towerA, towerB, towerC) {
 
     if (discCount >= 1) {
 
-        this.solvePuzzle(discCount-1, source, buffer, destination);
+        this.solvePuzzle(discCount-1, towerA, towerC, towerB);
 
-        var poppedElement = "";
-        if (source === "A") {
-            poppedElement = this.towerA.pop();
-        }
-        else if (source === "B") {
-            poppedElement = this.towerB.pop();
-        }
-        else if (source === "C") {
-            poppedElement = this.towerC.pop();
-        }
+        var poppedElement = towerA.pop();
 
-        if (destination === "A") {
-            this.towerA.push(poppedElement);
-        }
-        else if (destination === "B") {
-            this.towerB.push(poppedElement);
-        }
-        else if (destination === "C") {
-            this.towerC.push(poppedElement);
-        }
+        towerB.push(poppedElement);
 
-        this.solvePuzzle(discCount-1, buffer, destination, source);
+        this.solvePuzzle(discCount-1, towerC, towerB, towerA);
     }
-    return;
 }
 
 module.exports = TowerOfHanoi;

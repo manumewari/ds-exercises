@@ -8,11 +8,7 @@ function Queue(maxCapacity) {
 
 Queue.prototype.enqueue = function(value) {
 
-    if( this.count() === this.maxCapacity)
-    {
-        console.log("Max capacity already reached. Remove element before adding a new one.");
-    }
-    else
+    if( this.count() < this.maxCapacity)
     {
         this.queue[ this.endIndex++ ] = value;
     }
@@ -26,14 +22,10 @@ Queue.prototype.dequeue = function() {
         delete this.queue[ this.startIndex++ ];
         return valueDeleted;
     }
-    return;
 }
 
 Queue.prototype.peek = function() {
-    if(this.count() > 0)
-    {
-        return this.queue[this.startIndex];
-    }
+    return (this.count() > 0)? this.queue[this.startIndex]:undefined;
 }
 
 Queue.prototype.count = function() {
@@ -50,8 +42,7 @@ Queue.prototype.contains = function(value) {
 }
 
 Queue.prototype.until = function(value) {
-    while ( this.count() > 0 && this.dequeue() !== value) { //while there is an element to delete
-    }
+    while ( this.count() > 0 && this.dequeue() !== value); //while there is an element to delete
 }
 
 module.exports = Queue;

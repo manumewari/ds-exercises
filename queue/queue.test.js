@@ -2,7 +2,6 @@ const Queue = require("./Queue");
 
 test('Queue size should be zero with out adding any element', () => {
     var queue = new Queue(5);
-
     expect(queue.count()).toBe(0);
 });
 
