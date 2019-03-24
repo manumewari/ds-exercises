@@ -6,7 +6,7 @@ function Queue(maxCapacity) {
     this.endIndex = 0; //Nothing to remove
 }
 
-Queue.prototype.push = function(value) {
+Queue.prototype.enqueue = function(value) {
 
     if( this.count() === this.maxCapacity)
     {
@@ -18,7 +18,7 @@ Queue.prototype.push = function(value) {
     }
 }
 
-Queue.prototype.pop = function() {
+Queue.prototype.dequeue = function() {
 
     if (this.count() > 0)
     {
@@ -50,7 +50,7 @@ Queue.prototype.contains = function(value) {
 }
 
 Queue.prototype.until = function(value) {
-    while ( this.count() > 0 && this.pop() !== value) { //while there is an element to delete
+    while ( this.count() > 0 && this.dequeue() !== value) { //while there is an element to delete
     }
 }
 
