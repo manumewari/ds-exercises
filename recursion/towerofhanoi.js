@@ -4,7 +4,7 @@ function towerOfHanoiRecur (discCount, source, destination, buffer) {
     {
         towerOfHanoiRecur (discCount-1, source, buffer, destination);
 
-        console.log("Move disc from "+source+" to "+buffer);
+        console.log("Move disc from "+source+" to "+destination);
 
         towerOfHanoiRecur (discCount-1, buffer, destination, source);
     }

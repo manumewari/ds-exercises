@@ -1,15 +1,49 @@
 const TowerOfHanoi = require('./TowerOfHanoi');
 
-test('test tower of hanaoi', () => {
+test('Number of discs on tower A should be 4 initially', () => {
 
-    console.log("------ test tower of hanoi 1");
+    var testStack = new TowerOfHanoi(4);
 
-    var testStack = new TowerOfHanoi(3);
-
-
-    console.log("------ test tower of hanoi 2");
-
-    expect(2).toBe(2);
+    expect(testStack.towerA.count()).toBe(4);
 });
 
+test('Number of discs on tower B should be 0 initially', () => {
 
+    var testStack = new TowerOfHanoi(4);
+
+    expect(testStack.towerB.count()).toBe(0);
+});
+
+test('Number of discs on tower C should be 0 initially', () => {
+
+    var testStack = new TowerOfHanoi(4);
+
+    expect(testStack.towerC.count()).toBe(0);
+});
+
+test('Number of discs on tower A should be 0 after solving puzzle', () => {
+
+    var testStack = new TowerOfHanoi(4);
+
+    testStack.startMovingDiscs();
+
+    expect(testStack.towerA.count()).toBe(0);
+});
+
+test('Number of discs on tower B should be 0 after solving puzzle', () => {
+
+    var testStack = new TowerOfHanoi(4);
+
+    testStack.startMovingDiscs();
+
+    expect(testStack.towerB.count()).toBe(0);
+});
+
+test('Number of discs on tower C should be 4 after solving puzzle', () => {
+
+    var testStack = new TowerOfHanoi(4);
+
+    testStack.startMovingDiscs();
+
+    expect(testStack.towerC.count()).toBe(4);
+});
