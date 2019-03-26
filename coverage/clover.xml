@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1553428693491" clover="3.2.0">
+  <project timestamp="1553428693491" name="All files">
+    <metrics statements="119" coveredstatements="117" conditionals="44" coveredconditionals="39" methods="29" coveredmethods="29" elements="192" coveredelements="185" complexity="0" loc="119" ncloc="119" packages="2" files="6" classes="6"/>
+    <package name="queue">
+      <metrics statements="24" coveredstatements="24" conditionals="10" coveredconditionals="8" methods="7" coveredmethods="7"/>
+      <file name="queue.js" path="/Users/mmewari/github-personal/ds-exercises/queue/queue.js">
+        <metrics statements="24" coveredstatements="24" conditionals="10" coveredconditionals="8" methods="7" coveredmethods="7"/>
+        <line num="3" count="12" type="stmt"/>
+        <line num="4" count="12" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="44" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="43" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="14" type="stmt"/>
+        <line num="22" count="14" type="stmt"/>
+        <line num="23" count="14" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="81" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="stacks">
+      <metrics statements="95" coveredstatements="93" conditionals="34" coveredconditionals="31" methods="22" coveredmethods="22"/>
+      <file name="checkbrackets.js" path="/Users/mmewari/github-personal/ds-exercises/stacks/checkbrackets.js">
+        <metrics statements="14" coveredstatements="13" conditionals="11" coveredconditionals="9" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="94" type="cond" truecount="3" falsecount="0"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="11" count="26" type="stmt"/>
+        <line num="13" count="26" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="26" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="14" type="stmt"/>
+        <line num="19" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="12" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+      </file>
+      <file name="minstack.js" path="/Users/mmewari/github-personal/ds-exercises/stacks/minstack.js">
+        <metrics statements="16" coveredstatements="16" conditionals="5" coveredconditionals="5" methods="4" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="22" type="stmt"/>
+        <line num="11" count="22" type="cond" truecount="5" falsecount="0"/>
+        <line num="13" count="13" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="19" count="22" type="stmt"/>
+        <line num="20" count="22" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="8" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+      </file>
+      <file name="queuestk.js" path="/Users/mmewari/github-personal/ds-exercises/stacks/queuestk.js">
+        <metrics statements="21" coveredstatements="21" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="28" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="27" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="25" count="17" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="11" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+      </file>
+      <file name="stack.js" path="/Users/mmewari/github-personal/ds-exercises/stacks/stack.js">
+        <metrics statements="27" coveredstatements="26" conditionals="10" coveredconditionals="9" methods="7" coveredmethods="7"/>
+        <line num="3" count="62" type="stmt"/>
+        <line num="4" count="62" type="stmt"/>
+        <line num="5" count="62" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="10" count="246" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="16" count="244" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="138" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="138" type="stmt"/>
+        <line num="28" count="138" type="stmt"/>
+        <line num="30" count="138" type="stmt"/>
+        <line num="35" count="5" type="stmt"/>
+        <line num="36" count="75" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="10" type="stmt"/>
+        <line num="42" count="65" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="47" count="150" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="53" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="62" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="5" type="stmt"/>
+      </file>
+      <file name="towerofhanoi.js" path="/Users/mmewari/github-personal/ds-exercises/stacks/towerofhanoi.js">
+        <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="32" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="124" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="60" type="stmt"/>
+        <line num="26" count="60" type="stmt"/>
+        <line num="28" count="60" type="stmt"/>
+        <line num="30" count="60" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
