@@ -1,6 +1,6 @@
 
 class Queue {
-    constructor (maxCapacity) {
+    constructor (maxCapacity = 10) {
         this.maxCapacity = maxCapacity;
         this.queue = {}
         this.startIndex = 0; //start from this position

@@ -1,6 +1,6 @@
 
 class Stack{
-    constructor (stackMaxSize) {
+    constructor (stackMaxSize = 10) {
         this.stackObj = {};
         this.index = 0;
         this.maxSize = stackMaxSize; //Default

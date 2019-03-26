@@ -1,6 +1,6 @@
 const Stack = require('./Stack');
 
-function checkBrackets(stringValue) {
+const checkBrackets = (stringValue) => {
     let stringStack = new Stack(stringValue.length);
     let count = 0;
 

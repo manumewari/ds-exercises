@@ -1,7 +1,7 @@
 const Stack = require('./Stack');
 
 class MinStack {
-    constructor(stackMaxSize) {
+    constructor(stackMaxSize = 10) {
         this.stack = new Stack(stackMaxSize);
         this.minStack = new Stack(stackMaxSize);
     }
