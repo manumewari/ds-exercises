@@ -1,7 +1,7 @@
 const Stack = require('./Stack');
 
 test('Count should match the number of items pushed', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     testStack.push(10);
     expect(testStack.count()).toBe(1);
@@ -21,7 +21,7 @@ test('Count should be 0 when no element is pushed in stack', () => {
 });
 
 test('Count should decrease when element is popped from stack', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     [10, 11, 12, 13].forEach(element => testStack.push(element));
 
@@ -39,7 +39,7 @@ test('Count should decrease when element is popped from stack', () => {
 });
 
 test('last element pushed should be returned when peek function called', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     [10, 11, 12, 13].forEach(element => testStack.push(element));
 
@@ -47,7 +47,7 @@ test('last element pushed should be returned when peek function called', () => {
 });
 
 test('contains should return true when element searched was pushed in stack', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     [10, 11, 12, 13].forEach(element => testStack.push(element));
 
@@ -55,7 +55,7 @@ test('contains should return true when element searched was pushed in stack', ()
 });
 
 test('contains should return false when element searched was pushed in stack', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     [10, 11, 12, 13].forEach(element => testStack.push(element));
 
@@ -63,7 +63,7 @@ test('contains should return false when element searched was pushed in stack', (
 });
 
 test('count() should return 0 if element passed was not present in stack', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     [10, 11, 12, 13].forEach(element => testStack.push(element));
 
@@ -72,7 +72,7 @@ test('count() should return 0 if element passed was not present in stack', () =>
 });
 
 test('count() should return 2 if 3rd element passed was not present in stack', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     [10, 11, 12, 0, 13].forEach(element => testStack.push(element));
 
@@ -81,7 +81,7 @@ test('count() should return 2 if 3rd element passed was not present in stack', (
 });
 
 test('count() should stop increasing when max size limit of stack is reached', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     [10, 11, 12, 13, 14].forEach(element => testStack.push(element));
 
@@ -92,7 +92,7 @@ test('count() should stop increasing when max size limit of stack is reached', (
 });
 
 test('peek() should return same element once stack is reached', () => {
-    var testStack = new Stack(5);
+    let testStack = new Stack(5);
 
     [10, 11, 12, 13, 14].forEach(element => testStack.push(element));
 

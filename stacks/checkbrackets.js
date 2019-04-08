@@ -1,14 +1,14 @@
 const Stack = require('./Stack');
 
-function checkBrackets(stringValue) {
-    var stringStack = new Stack(stringValue.length);
-    var count = 0;
+const checkBrackets = (stringValue) => {
+    let stringStack = new Stack(stringValue.length);
+    let count = 0;
 
     Array.from(stringValue).forEach(charValue => ((charValue === "(" || charValue === ")") && stringStack.push(charValue)));
 
     while ( stringStack.peek() ) {
 
-        var poppedElement = stringStack.pop();
+        let poppedElement = stringStack.pop();
 
         if(count === 0 && poppedElement === "(") {//If opening braces comes first -> stop.
             return false;
