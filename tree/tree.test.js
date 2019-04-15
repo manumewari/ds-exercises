@@ -40,7 +40,7 @@ test("test for depth first traversal", () => {
     const tree = new Tree(1); //Root node
     const branch1 = tree.addChild(2); //Level 1
     const branch2 = tree.addChild(3); //Level 1
-    branch1.addChild(4); //Level 2
+    branch1.addChild(4); //Level  2
     branch1.addChild(5); //Level 2
     branch2.addChild(6); //Level 2
     branch2.addChild(7); //Level 2
