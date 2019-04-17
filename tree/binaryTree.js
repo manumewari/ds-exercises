@@ -12,8 +12,6 @@ class BinaryTree {
             }
             else {
                 this.left = new BinaryTree(value);
-
-                console.log("LEFT side node created : "+value);
             }
         }
         else {
@@ -22,13 +20,12 @@ class BinaryTree {
             }
             else {
                 this.right = new BinaryTree(value);
-                console.log("RIGHT side node created : "+value);
             }
         }
         return this;
     }
 
-    contains (value) {
+    contains(value) {
         if(this.value === value) {
             return true;
         }
@@ -43,7 +40,7 @@ class BinaryTree {
         }
     }
 
-    traverseDepthFirstInOrder (node) {
+    traverseDepthFirstInOrder() {
         let traversalResult = [];
 
         let traverse = (node) => {
@@ -55,11 +52,11 @@ class BinaryTree {
             traverse(node.right);
         }
 
-        traverse(node);
+        traverse(this);
         return traversalResult;
     }
 
-    traverseDepthFirstPreOrder (node) {
+    traverseDepthFirstPreOrder() {
         let traversalResult = [];
 
         let traverse = (node) => {
@@ -71,12 +68,12 @@ class BinaryTree {
             traverse(node.right);
         }
 
-        traverse(node);
+        traverse(this);
 
         return traversalResult;
     }
 
-    traverseDepthFirstPostOrder (node) {
+    traverseDepthFirstPostOrder() {
         let traversalResult = [];
 
         let traverse = (node) => {
@@ -88,9 +85,69 @@ class BinaryTree {
             traversalResult.push(node.value);
         }
 
-        traverse(node);
+        traverse(this);
 
         return traversalResult;
+    }
+
+    traverseBreadthFirst() {
+        let orderQueue = [this];
+        let traversalResult = [];
+
+        let traverse = (node) => {
+            while(orderQueue.length && orderQueue.length > 0) {
+                const node = orderQueue.shift();
+                traversalResult.push(node.value);
+
+                node.left && orderQueue.push(node.left);
+                node.right && orderQueue.push(node.right);
+            }
+        }
+        traverse(this);
+
+        return traversalResult;
+    }
+
+    checkIfFull() {
+
+        let ifFull = true;
+        let check = (node) => {
+            if ((node.left && !node.right) || (!node.left && node.right)) {
+                ifFull = false;
+                return;
+            }
+            ifFull && node.left && check(node.left);
+            ifFull && node.right && check(node.right);
+            return;
+        }
+        check(this);
+        return ifFull;
+    }
+
+    checkIfBalanced() {
+        let minHeight = 0;
+        let maxHeight = 0;
+
+        let check = (node, height) => {
+            if(!node.left && !node.right) {
+                if(minHeight===0 || minHeight > height) {
+                    minHeight = height;
+                }
+                if(maxHeight < height) {
+                    maxHeight = height;
+                }
+                return;
+            }
+            else if ((node.left || node.right) && ++height) {
+                node.left && check(node.left, height);
+                node.right && check(node.right, height);
+            }
+            return;
+        }
+
+        check(this, 0);
+
+        return ((maxHeight-minHeight)===1);
     }
 }
 
