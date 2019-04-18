@@ -5,8 +5,8 @@ class Tree {
         this.children = [];
     }
 
-    addChild(value) {
-        const child = new Tree(value);
+    addChild(newValue) {
+        const child = new Tree(newValue);
         this.children.push(child);
         return child;
     }
@@ -15,13 +15,7 @@ class Tree {
         if (this.value === value) {
             return true;
         }
-        const len = this.children.length;
-        for (let i=0; i<len; i++) {
-            if (this.children[i].contains(value)) {
-                return true;
-            }
-        }
-        return false;
+        return this.children.find(child => child.contains(value));
     }
 
     depthFirstTraversal() {
@@ -29,10 +23,7 @@ class Tree {
 
         let traverse = (node) => {
             output.push(node.value);
-            const len = node.children.length;
-            for (let i=0; i<len; i++) {
-                traverse(node.children[i]);
-            }
+            node.children.forEach(child => traverse(child));
         }
 
         traverse(this);

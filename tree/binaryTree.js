@@ -5,21 +5,21 @@ class BinaryTree {
         this.right = null;
     }
 
-    insert(value) {
-        if (value <= this.value) {
+    insert(newValue) {
+        if (newValue <= this.value) {
             if(this.left) {
-                this.left.insert(value);
+                this.left.insert(newValue);
             }
             else {
-                this.left = new BinaryTree(value);
+                this.left = new BinaryTree(newValue);
             }
         }
         else {
             if(this.right) {
-                this.right.insert(value);
+                this.right.insert(newValue);
             }
             else {
-                this.right = new BinaryTree(value);
+                this.right = new BinaryTree(newValue);
             }
         }
         return this;
@@ -33,8 +33,8 @@ class BinaryTree {
             return this.left.contains(value);
         }
         else if(this.right) {
-                return this.right.contains(value);
-            }
+            return this.right.contains(value);
+        }
         else {
             return false;
         }
