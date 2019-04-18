@@ -1,6 +1,5 @@
 const mergeSort = (arr) => {
-    if(arr !== null) {
-
+    if(arr && Array.isArray(arr)) {
         const len = arr.length;
 
         if(len <= 1) {

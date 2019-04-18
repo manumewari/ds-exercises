@@ -1,18 +1,15 @@
 const selectionSort = (arr) => {
-    if (arr !== null) {
-        let len = arr.length;
+    if (arr && Array.isArray(arr)) {
+        let index = arr.length;
 
-        let temp;
-        while (--len >= 0) {
+        while (--index >= 0) {
             let biggestNumberIndex = 0;
-            for (let j = 1; j<=len; j++) {
+            for (let j = 1; j<=index; j++) {
                 if(arr[biggestNumberIndex] < arr[j]) {
                     biggestNumberIndex = j;
                 }
             }
-            temp = arr[len];
-            arr[len] = arr[biggestNumberIndex];
-            arr[biggestNumberIndex] = temp;
+            [arr[index], arr[biggestNumberIndex]] = [arr[biggestNumberIndex], arr[index]];
         }
     }
 

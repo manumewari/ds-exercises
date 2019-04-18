@@ -1,7 +1,6 @@
 const insertionSort = (arr) => {
-    if(arr !== null) {
+    if(arr && Array.isArray(arr)) {
         const len = arr.length;
-
         for(let i=1; i<len; i++) {
             let j=i;
             let currentNumber = arr[i];
